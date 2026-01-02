@@ -1,65 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Name | Profile</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 40px auto;
-            line-height: 1.6;
-            color: #222;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Darshan Patel | Lead Mobile Engineer</title>
 
-        h1,
-        h2 {
-            color: #0a66c2;
-        }
+  <meta name="description" content="Darshan Patel – Lead Mobile Engineer with 12+ years building scalable Android, iOS, Flutter, and React Native applications."/>
+  <meta name="author" content="Darshan Patel"/>
 
-        .job {
-            margin-bottom: 20px;
-        }
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #ffffff;
+      color: #1f2937;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
 
-        footer {
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #666;
-        }
-    </style>
+    h1 { font-size: 2.4rem; margin-bottom: 5px; }
+    h2 { margin-top: 50px; border-bottom: 2px solid #e5e7eb; padding-bottom: 6px; }
+    h3 { margin-bottom: 4px; }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #2563eb;
+      font-weight: 600;
+    }
+
+    .section { margin-top: 40px; }
+
+    .job {
+      margin-bottom: 30px;
+    }
+
+    .job span {
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+    }
+
+    .skill-box {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.9rem;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+    }
+  </style>
 </head>
 
 <body>
 
-    <h1>Your Name</h1>
-    <p><strong>Role:</strong> Software Engineer / Analyst / Designer</p>
-    <p><strong>Email:</strong> you@email.com</p>
-    <p><strong>GitHub:</strong> https://github.com/yourusername</p>
+  <!-- HERO -->
+  <header>
+    <h1>Darshan Patel</h1>
+    <div class="subtitle">Lead Mobile Engineer · VP of Engineering</div>
+    <p>
+      12+ years shaping scalable, high-performance mobile applications across
+      Android, iOS, Flutter, and React Native.
+    </p>
+    <p>
+      📍 Ahmedabad, India · 
+      <a href="https://www.linkedin.com/in/darshan-patel-bb242963" target="_blank">LinkedIn</a>
+    </p>
+  </header>
 
+  <!-- ABOUT -->
+  <section class="section">
+    <h2>About</h2>
+    <p>
+      Engineering leader with deep hands-on expertise in mobile architecture,
+      cross-platform development, and team building. Proven record of delivering
+      production-scale applications, leading multi-disciplinary teams, and
+      building products from inception to millions of users.
+    </p>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section">
     <h2>Work Experience</h2>
 
     <div class="job">
-        <strong>Company Name</strong> — Job Title
-        <br />Jan 2023 – Present
-        <ul>
-            <li>Built X using Y</li>
-            <li>Improved performance by Z%</li>
-        </ul>
+      <h3>VP of Engineering – Z21 Technoserve LLP</h3>
+      <span>Dec 2024 – Present · Ahmedabad</span>
+      <ul>
+        <li>Led development of React Native applications including the Molekule mobile app.</li>
+        <li>Managed cross-platform teams across Android (Kotlin), iOS (Swift/Objective-C), Flutter, and React Native.</li>
+        <li>Led backend teams and developed APIs using Python and Node.js.</li>
+        <li>Implemented feature flag systems (Split.io), analytics (Amplitude), and push notifications (Klaviyo).</li>
+        <li>Delivered IoT and NFC-based features with production-grade reliability.</li>
+      </ul>
     </div>
 
-    <h2>Skills</h2>
-    <ul>
-        <li>JavaScript, Python, SQL</li>
-        <li>React, Node.js</li>
-        <li>AWS, Docker</li>
-    </ul>
+    <div class="job">
+      <h3>Technical Project Manager – Kissht</h3>
+      <span>Feb 2019 – Nov 2024 · Mumbai</span>
+      <ul>
+        <li>Led development of multiple Android and React Native applications used in lending and merchant platforms.</li>
+        <li>Oversaw Android, iOS, Flutter, and React Native teams.</li>
+        <li>Built backend services using GoLang.</li>
+        <li>Implemented CodePush, Redux Toolkit, Firebase, Crashlytics, and analytics tools.</li>
+        <li>Integrated payment gateways including RazorPay, JusPay, and CashFree.</li>
+      </ul>
+    </div>
 
-    <footer>
-        © 2026 Your Name
-    </footer>
+    <div class="job">
+      <h3>Senior Android Developer – Wealthee / WealthTrust (Acquired by OroWealth)</h3>
+      <span>Nov 2015 – Jan 2019</span>
+      <ul>
+        <li>Built WealthTrust mobile application end-to-end.</li>
+        <li>Led Android and iOS teams.</li>
+        <li>Implemented expense tracking, mutual fund investment, and financial feeds.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Android Application Developer – iMobTree Solutions</h3>
+      <span>Aug 2013 – Oct 2015</span>
+      <ul>
+        <li>Developed 12+ client applications with full ownership.</li>
+        <li>Built 2D games using Cocos2d-x.</li>
+        <li>Created in-house products including Wifi File Transfer and Photo Collage apps.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-box">React Native (v0.70+)</div>
+      <div class="skill-box">Android (Kotlin)</div>
+      <div class="skill-box">iOS (Swift / Objective-C)</div>
+      <div class="skill-box">Flutter</div>
+      <div class="skill-box">Backend: GoLang, Node.js, Python</div>
+      <div class="skill-box">Redux Toolkit & State Management</div>
+      <div class="skill-box">Firebase, Crashlytics, Analytics</div>
+      <div class="skill-box">IoT, NFC, Location Services</div>
+      <div class="skill-box">Team Leadership & Hiring</div>
+      <div class="skill-box">Architecture & System Design</div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section">
+    <h2>Education</h2>
+    <p>
+      <strong>B.E. in Computer Science & Engineering</strong><br/>
+      Gujarat Technological University (GTU) · 2009 – 2013
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Darshan Patel · Built with GitHub Pages
+  </footer>
 
 </body>
-
 </html>
