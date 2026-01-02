@@ -1,359 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Darshan Patel | VP of Engineering & Mobile Architect</title>
-    <meta name="description"
-        content="Darshan Patel – VP of Engineering with 12+ years of experience in mobile architecture (Android, iOS, React Native, Flutter) and Backend Systems." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Darshan Patel | Full Stack Architect & VP Engineering</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand: #0f172a;
+      --accent: #3b82f6;
+      --accent-soft: #eff6ff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --white: #ffffff;
+      --bg: #f8fafc;
+    }
 
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --text-main: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f8fafc;
-            --white: #ffffff;
-            --border: #e2e8f0;
-        }
+    * { box-sizing: border-box; transition: all 0.25s ease; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text-dark); margin: 0; line-height: 1.6; }
 
-        * {
-            box-sizing: border-box;
-        }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-light);
-            color: var(--text-main);
-            margin: 0;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
+    /* Header & Profile Photo */
+    header { background: var(--brand); color: var(--white); padding: 80px 0 100px; text-align: center; clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); }
+    .profile-container { position: relative; margin-bottom: 20px; }
+    .profile-photo {
+      width: 160px; height: 160px; border-radius: 50%; border: 5px solid var(--accent);
+      margin: 0 auto; overflow: hidden; background: #334155;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .profile-photo img { width: 100%; height: 100%; object-fit: cover; }
+    
+    h1 { font-size: 3rem; margin: 10px 0 5px; font-weight: 800; }
+    .hero-title { font-size: 1.4rem; color: var(--accent); font-weight: 600; margin-bottom: 20px; }
 
-        /* Layout */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    /* Stats bar */
+    .hero-metrics { display: flex; justify-content: center; gap: 40px; margin-top: 30px; }
+    .metric { text-align: center; }
+    .metric-val { font-size: 1.8rem; font-weight: 800; display: block; }
+    .metric-lab { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); }
 
-        /* Navigation */
-        nav {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--border);
-            padding: 15px 0;
-        }
+    /* Experience & Achievements Cards */
+    section { padding: 60px 0; }
+    .section-title { font-size: 2rem; font-weight: 800; margin-bottom: 40px; text-align: center; }
+    
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+    
+    .card {
+      background: var(--white); border-radius: 16px; padding: 32px;
+      border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); border-color: var(--accent); }
+    
+    .tag { 
+      background: var(--accent-soft); color: var(--accent); font-size: 0.75rem; 
+      font-weight: 700; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 12px;
+    }
 
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    /* Achievement specific styles */
+    .achievement-card { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white; position: relative; overflow: hidden; }
+    .achievement-card::after { content: "★"; position: absolute; right: -10px; bottom: -10px; font-size: 8rem; opacity: 0.1; }
 
-        nav a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-left: 20px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        /* Hero Section */
-        header {
-            padding: 80px 0 60px;
-            text-align: center;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin: 0;
-            letter-spacing: -1px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-num {
-            display: block;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-        }
-
-        /* Sections */
-        section {
-            padding: 60px 0;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            border-left: 4px solid var(--primary);
-            padding-left: 15px;
-            margin-bottom: 30px;
-        }
-
-        /* Experience Card */
-        .job-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .job-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-        }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .job-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .job-company {
-            color: var(--primary);
-            font-weight: 600;
-            display: block;
-        }
-
-        .job-date {
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
-        /* Skills Grid */
-        .skills-category {
-            margin-bottom: 30px;
-        }
-
-        .skills-category h3 {
-            font-size: 1rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .skill-tag:hover {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-
-        /* Footer */
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid var(--border);
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            .job-header {
-                flex-direction: column;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-    </style>
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      header { clip-path: none; padding: 60px 0; }
+      .hero-metrics { flex-direction: column; gap: 20px; }
+    }
+  </style>
 </head>
-
 <body>
 
-    <nav>
-        <div class="container">
-            <div style="font-weight: 700; font-size: 1.2rem;">DP.</div>
-            <div>
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#skills">Skills</a>
-                <a href="https://www.linkedin.com/in/darshan-patel-bb242963" target="_blank">LinkedIn</a>
-            </div>
+  <header>
+    <div class="container">
+      <div class="profile-container">
+        <div class="profile-photo">
+          <img src="profile-photo.jpg" alt="Darshan Patel">
         </div>
-    </nav>
+      </div>
+      <h1>Darshan Patel [cite: 1]</h1>
+      <div class="hero-title">Full Stack Architect | VP of Engineering | Solutions Expert</div>
+      <p style="max-width: 700px; margin: 0 auto; opacity: 0.9;">
+        12+ years of experience  shaping scalable architectures, AI systems, and multi-platform mobile ecosystems. 
+        Leading engineering teams from inception to millions of users.
+      </p>
+      
+      <div class="hero-metrics">
+        <div class="metric"><span class="metric-val">12+</span><span class="metric-lab">Years Crafting </span></div>
+        <div class="metric"><span class="metric-val">20+</span><span class="metric-lab">Apps Launched [cite: 84, 101]</span></div>
+        <div class="metric"><span class="metric-val">AWS</span><span class="metric-lab">Cloud Infrastructure</span></div>
+      </div>
+    </div>
+  </header>
 
-    <header>
-        <div class="container">
-            <h1>Darshan Patel</h1>
-            <div class="hero-subtitle">VP of Engineering · Lead Mobile Architect</div>
-            <p style="max-width: 600px; margin: 20px auto; color: var(--text-light);">
-                12+ years of experience architecting high-stakes mobile ecosystems and leading multi-disciplinary
-                engineering teams to deliver world-class products.
-            </p>
-            <div class="hero-stats">
-                <div class="stat-item"><span class="stat-num">12+</span><span class="stat-label">Years Exp.</span></div>
-                <div class="stat-item"><span class="stat-num">20+</span><span class="stat-label">Apps Launched</span>
-                </div>
-                <div class="stat-item"><span class="stat-num">4+</span><span class="stat-label">Platforms</span></div>
-            </div>
-        </div>
-    </header>
+  <section class="container">
+    <h2 class="section-title">Professional Architecture</h2>
+    <div class="grid">
+      
+      <div class="card">
+        <span class="tag">CURRENT LEADERSHIP</span>
+        <h3>VP of Engineering [cite: 5]</h3>
+        <p style="color: var(--accent); font-weight: 600;">Z21 Technoserve LLP [cite: 6] | 2024–Present [cite: 7]</p>
+        <p><strong>Cloud & Full Stack:</strong> Architected and deployed scalable backends on <strong>AWS ECS</strong> with <strong>RDS PostgreSQL</strong>. Optimized asset management and environment security using <strong>S3</strong>.</p>
+        <ul>
+          <li>Leading cross-platform teams: React Native (Molekule), Android (Kotlin), iOS (Swift), and Flutter[cite: 8, 10, 11, 12, 13, 14].</li>
+          <li>Developing high-performance APIs using Python and Node.js[cite: 15, 16].</li>
+          <li>Implementing IoT, NFC features, and advanced analytics via Amplitude and Klaviyo[cite: 24, 27, 28, 25, 26].</li>
+        </ul>
+      </div>
 
-    <section id="about" class="container">
-        <h2>Executive Summary</h2>
-        <p>
-            Engineering leader with deep hands-on expertise in mobile architecture, cross-platform development, and
-            organizational design[cite: 2, 57]. Proven track record of scaling applications to millions of users,
-            leading backend integrations, and cultivating high-performance engineering cultures[cite: 39, 84].
-        </p>
-    </section>
+      <div class="card">
+        <span class="tag">AI & INNOVATION</span>
+        <h3>AI Solutions Architect</h3>
+        <p style="color: var(--accent); font-weight: 600;">S4AI | Innovation Lab</p>
+        <p><strong>Agentic AI & RAG:</strong> Leading the development of Knowledge Management Systems using RAG (Retrieval-Augmented Generation) and Agentic AI workflows to solve complex enterprise data challenges.</p>
+        <p><strong>Cyber Security:</strong> Focused on securing AI deployments and implementing robust guardrails for LLM-based applications.</p>
+      </div>
 
-    <section id="experience" class="container" style="background: var(--bg-light);">
-        <h2>Professional Experience</h2>
+      <div class="card">
+        <span class="tag">FINTECH SCALE</span>
+        <h3>Technical Project Manager </h3>
+        <p style="color: var(--accent); font-weight: 600;">Kissht / Ring | 2019–2024 [cite: 30]</p>
+        <ul>
+          <li>Led high-concurrency <strong>GoLang</strong> backend services for lending platforms[cite: 43].</li>
+          <li>Oversaw development of 5+ major Fintech apps including Ring and Kissht[cite: 32, 33, 35, 36, 37].</li>
+          <li>Integrated complex payment gateways: RazorPay, JusPay, and CashFree[cite: 82].</li>
+        </ul>
+      </div>
 
-        <div class="job-card">
-            <div class="job-header">
-                <div>
-                    <span class="job-title">VP of Engineering</span>
-                    <span class="job-company">Z21 Technoserve LLP</span>
-                </div>
-                <span class="job-date">Dec 2024 – Present</span>
-            </div>
-            <ul>
-                <li><strong>Orchestrating Cross-Platform Strategy:</strong> Leading development for React Native,
-                    Android (Kotlin), and iOS (Swift) teams to deliver high-performance apps like Molekule[cite: 8, 9,
-                    10, 11].</li>
-                <li><strong>Full-Stack Leadership:</strong> Managing backend engineering and API development utilizing
-                    Python and Node.js[cite: 14, 15, 16].</li>
-                <li><strong>Modern Infrastructure:</strong> Implementing robust feature flagging (Split.io), advanced
-                    analytics (Amplitude), and IoT/NFC integrations[cite: 22, 24, 28].</li>
-            </ul>
-        </div>
+    </div>
+  </section>
 
-        <div class="job-card">
-            <div class="job-header">
-                <div>
-                    <span class="job-title">Technical Project Manager</span>
-                    <span class="job-company">Kissht / Ring</span>
-                </div>
-                <span class="job-date">Feb 2019 – Nov 2024</span>
-            </div>
-            <ul>
-                <li><strong>Scale & Impact:</strong> Directed development for flagship lending and merchant apps (Ring,
-                    Kissht) used by millions[cite: 32, 33, 35].</li>
-                <li><strong>Backend Architecture:</strong> Led backend teams in GoLang to support high-concurrency
-                    fintech services[cite: 43].</li>
-                <li><strong>Operational Excellence:</strong> Streamlined updates via CodePush and integrated complex
-                    payment gateways (RazorPay, JusPay)[cite: 76, 82].</li>
-            </ul>
+  <section style="background: #f1f5f9;">
+    <div class="container">
+      <h2 class="section-title">Achievements & Recognition</h2>
+      <div class="grid">
+        
+        <div class="card achievement-card">
+          <span class="tag" style="background: var(--accent); color: white;">1st PRIZE WINNER</span>
+          <h3>India AI Cyber Guard Hackathon</h3>
+          <p>Recognized for innovative excellence in AI-driven cybersecurity. Secured 1st prize for developing high-impact defensive AI models.</p>
+          <p style="font-size: 0.85rem; opacity: 0.8;">Certificate of Excellence Awarded</p>
         </div>
 
-    </section>
-
-    <section id="skills" class="container">
-        <h2>Technical Arsenal</h2>
-
-        <div class="skills-category">
-            <h3>Mobile & Frontend</h3>
-            <div class="skills-grid">
-                <div class="skill-tag">React Native (v0.70+)</div>
-                <div class="skill-tag">Android (Kotlin/Java)</div>
-                <div class="skill-tag">iOS (Swift/Obj-C)</div>
-                <div class="skill-tag">Flutter</div>
-                <div class="skill-tag">Redux Toolkit</div>
-            </div>
+        <div class="card achievement-card">
+          <span class="tag" style="background: var(--accent); color: white;">EXCELLENCE</span>
+          <h3>Employee of the Month </h3>
+          <p>Awarded in November 2024 for exceptional leadership and technical contribution to Z21 Technoserve.</p>
+          <p style="font-size: 0.85rem; opacity: 0.8;">Consecutive "Exceptional" Rating (4 Years) [cite: 86, 87]</p>
         </div>
 
-        <div class="skills-category">
-            <h3>Backend & DevOps</h3>
-            <div class="skills-grid">
-                <div class="skill-tag">GoLang</div>
-                <div class="skill-tag">Node.js</div>
-                <div class="skill-tag">Python</div>
-                <div class="skill-tag">Firebase</div>
-                <div class="skill-tag">CI/CD & CodePush</div>
-            </div>
-        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="skills-category">
-            <h3>Leadership</h3>
-            <div class="skills-grid">
-                <div class="skill-tag">Team Mentorship</div>
-                <div class="skill-tag">Hiring & Talent Dev</div>
-                <div class="skill-tag">System Design</div>
-                <div class="skill-tag">Agile Management</div>
-            </div>
-        </div>
-    </section>
+  <section class="container">
+    <h2 class="section-title">Technical DNA</h2>
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+      <div class="card" style="padding: 20px; text-align: center;">
+        <h4 style="margin: 0 0 10px;">Mobile Expert </h4>
+        <small>React Native, Kotlin, Swift, Flutter, PWA [cite: 48, 49, 51, 52, 59]</small>
+      </div>
+      <div class="card" style="padding: 20px; text-align: center;">
+        <h4 style="margin: 0 0 10px;">Backend/Cloud</h4>
+        <small>GoLang, Python, Node.js, AWS ECS, RDS, S3 [cite: 15, 16, 43]</small>
+      </div>
+      <div class="card" style="padding: 20px; text-align: center;">
+        <h4 style="margin: 0 0 10px;">Modern AI</h4>
+        <small>RAG Architectures, Agentic AI, LLM Orchestration</small>
+      </div>
+      <div class="card" style="padding: 20px; text-align: center;">
+        <h4 style="margin: 0 0 10px;">Leadership [cite: 56]</h4>
+        <small>Hiring, Mentorship, Team Building, Org Design [cite: 53, 54, 57, 58]</small>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <div class="container">
-            <p>© 2026 Darshan Patel · Ahmedabad, India</p>
-            <p>Built with Passion & GitHub Pages</p>
-        </div>
-    </footer>
+  <footer style="text-align: center; padding: 40px 0; border-top: 1px solid #e2e8f0; color: var(--text-muted);">
+    <p>Darshan Patel | B.E. Computer Science & Engineering [cite: 63] | 2009-2013 [cite: 64]</p>
+    <p><a href="https://www.linkedin.com/in/darshan-patel-bb242963" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 700;">LinkedIn Profile [cite: 3]</a></p>
+  </footer>
 
 </body>
-
 </html>
