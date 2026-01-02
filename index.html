@@ -1,187 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Darshan Patel | Lead Mobile Engineer</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Darshan Patel | VP of Engineering & Mobile Architect</title>
+    <meta name="description"
+        content="Darshan Patel – VP of Engineering with 12+ years of experience in mobile architecture (Android, iOS, React Native, Flutter) and Backend Systems." />
 
-  <meta name="description" content="Darshan Patel – Lead Mobile Engineer with 12+ years building scalable Android, iOS, Flutter, and React Native applications."/>
-  <meta name="author" content="Darshan Patel"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: #ffffff;
-      color: #1f2937;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      line-height: 1.6;
-    }
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
 
-    h1 { font-size: 2.4rem; margin-bottom: 5px; }
-    h2 { margin-top: 50px; border-bottom: 2px solid #e5e7eb; padding-bottom: 6px; }
-    h3 { margin-bottom: 4px; }
+        * {
+            box-sizing: border-box;
+        }
 
-    .subtitle {
-      font-size: 1.1rem;
-      color: #2563eb;
-      font-weight: 600;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
 
-    .section { margin-top: 40px; }
+        /* Layout */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .job {
-      margin-bottom: 30px;
-    }
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+        }
 
-    .job span {
-      color: #6b7280;
-      font-size: 0.95rem;
-    }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    ul {
-      padding-left: 20px;
-    }
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
 
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 10px;
-    }
+        nav a:hover {
+            color: var(--primary);
+        }
 
-    .skill-box {
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
-      padding: 10px 12px;
-      border-radius: 6px;
-      font-size: 0.95rem;
-    }
+        /* Hero Section */
+        header {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
 
-    footer {
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid #e5e7eb;
-      font-size: 0.9rem;
-      color: #6b7280;
-      text-align: center;
-    }
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: -1px;
+        }
 
-    a { color: #2563eb; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 10px;
+        }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-    }
-  </style>
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-num {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* Experience Card */
+        .job-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .job-company {
+            color: var(--primary);
+            font-weight: 600;
+            display: block;
+        }
+
+        .job-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Skills Grid */
+        .skills-category {
+            margin-bottom: 30px;
+        }
+
+        .skills-category h3 {
+            font-size: 1rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .job-header {
+                flex-direction: column;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <header>
-    <h1>Darshan Patel</h1>
-    <div class="subtitle">Lead Mobile Engineer · VP of Engineering</div>
-    <p>
-      12+ years shaping scalable, high-performance mobile applications across
-      Android, iOS, Flutter, and React Native.
-    </p>
-    <p>
-      📍 Ahmedabad, India · 
-      <a href="https://www.linkedin.com/in/darshan-patel-bb242963" target="_blank">LinkedIn</a>
-    </p>
-  </header>
+    <nav>
+        <div class="container">
+            <div style="font-weight: 700; font-size: 1.2rem;">DP.</div>
+            <div>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="https://www.linkedin.com/in/darshan-patel-bb242963" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </nav>
 
-  <!-- ABOUT -->
-  <section class="section">
-    <h2>About</h2>
-    <p>
-      Engineering leader with deep hands-on expertise in mobile architecture,
-      cross-platform development, and team building. Proven record of delivering
-      production-scale applications, leading multi-disciplinary teams, and
-      building products from inception to millions of users.
-    </p>
-  </section>
+    <header>
+        <div class="container">
+            <h1>Darshan Patel</h1>
+            <div class="hero-subtitle">VP of Engineering · Lead Mobile Architect</div>
+            <p style="max-width: 600px; margin: 20px auto; color: var(--text-light);">
+                12+ years of experience architecting high-stakes mobile ecosystems and leading multi-disciplinary
+                engineering teams to deliver world-class products.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-num">12+</span><span class="stat-label">Years Exp.</span></div>
+                <div class="stat-item"><span class="stat-num">20+</span><span class="stat-label">Apps Launched</span>
+                </div>
+                <div class="stat-item"><span class="stat-num">4+</span><span class="stat-label">Platforms</span></div>
+            </div>
+        </div>
+    </header>
 
-  <!-- EXPERIENCE -->
-  <section class="section">
-    <h2>Work Experience</h2>
+    <section id="about" class="container">
+        <h2>Executive Summary</h2>
+        <p>
+            Engineering leader with deep hands-on expertise in mobile architecture, cross-platform development, and
+            organizational design[cite: 2, 57]. Proven track record of scaling applications to millions of users,
+            leading backend integrations, and cultivating high-performance engineering cultures[cite: 39, 84].
+        </p>
+    </section>
 
-    <div class="job">
-      <h3>VP of Engineering – Z21 Technoserve LLP</h3>
-      <span>Dec 2024 – Present · Ahmedabad</span>
-      <ul>
-        <li>Led development of React Native applications including the Molekule mobile app.</li>
-        <li>Managed cross-platform teams across Android (Kotlin), iOS (Swift/Objective-C), Flutter, and React Native.</li>
-        <li>Led backend teams and developed APIs using Python and Node.js.</li>
-        <li>Implemented feature flag systems (Split.io), analytics (Amplitude), and push notifications (Klaviyo).</li>
-        <li>Delivered IoT and NFC-based features with production-grade reliability.</li>
-      </ul>
-    </div>
+    <section id="experience" class="container" style="background: var(--bg-light);">
+        <h2>Professional Experience</h2>
 
-    <div class="job">
-      <h3>Technical Project Manager – Kissht</h3>
-      <span>Feb 2019 – Nov 2024 · Mumbai</span>
-      <ul>
-        <li>Led development of multiple Android and React Native applications used in lending and merchant platforms.</li>
-        <li>Oversaw Android, iOS, Flutter, and React Native teams.</li>
-        <li>Built backend services using GoLang.</li>
-        <li>Implemented CodePush, Redux Toolkit, Firebase, Crashlytics, and analytics tools.</li>
-        <li>Integrated payment gateways including RazorPay, JusPay, and CashFree.</li>
-      </ul>
-    </div>
+        <div class="job-card">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">VP of Engineering</span>
+                    <span class="job-company">Z21 Technoserve LLP</span>
+                </div>
+                <span class="job-date">Dec 2024 – Present</span>
+            </div>
+            <ul>
+                <li><strong>Orchestrating Cross-Platform Strategy:</strong> Leading development for React Native,
+                    Android (Kotlin), and iOS (Swift) teams to deliver high-performance apps like Molekule[cite: 8, 9,
+                    10, 11].</li>
+                <li><strong>Full-Stack Leadership:</strong> Managing backend engineering and API development utilizing
+                    Python and Node.js[cite: 14, 15, 16].</li>
+                <li><strong>Modern Infrastructure:</strong> Implementing robust feature flagging (Split.io), advanced
+                    analytics (Amplitude), and IoT/NFC integrations[cite: 22, 24, 28].</li>
+            </ul>
+        </div>
 
-    <div class="job">
-      <h3>Senior Android Developer – Wealthee / WealthTrust (Acquired by OroWealth)</h3>
-      <span>Nov 2015 – Jan 2019</span>
-      <ul>
-        <li>Built WealthTrust mobile application end-to-end.</li>
-        <li>Led Android and iOS teams.</li>
-        <li>Implemented expense tracking, mutual fund investment, and financial feeds.</li>
-      </ul>
-    </div>
+        <div class="job-card">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Technical Project Manager</span>
+                    <span class="job-company">Kissht / Ring</span>
+                </div>
+                <span class="job-date">Feb 2019 – Nov 2024</span>
+            </div>
+            <ul>
+                <li><strong>Scale & Impact:</strong> Directed development for flagship lending and merchant apps (Ring,
+                    Kissht) used by millions[cite: 32, 33, 35].</li>
+                <li><strong>Backend Architecture:</strong> Led backend teams in GoLang to support high-concurrency
+                    fintech services[cite: 43].</li>
+                <li><strong>Operational Excellence:</strong> Streamlined updates via CodePush and integrated complex
+                    payment gateways (RazorPay, JusPay)[cite: 76, 82].</li>
+            </ul>
+        </div>
 
-    <div class="job">
-      <h3>Android Application Developer – iMobTree Solutions</h3>
-      <span>Aug 2013 – Oct 2015</span>
-      <ul>
-        <li>Developed 12+ client applications with full ownership.</li>
-        <li>Built 2D games using Cocos2d-x.</li>
-        <li>Created in-house products including Wifi File Transfer and Photo Collage apps.</li>
-      </ul>
-    </div>
-  </section>
+    </section>
 
-  <!-- SKILLS -->
-  <section class="section">
-    <h2>Skills</h2>
-    <div class="skills">
-      <div class="skill-box">React Native (v0.70+)</div>
-      <div class="skill-box">Android (Kotlin)</div>
-      <div class="skill-box">iOS (Swift / Objective-C)</div>
-      <div class="skill-box">Flutter</div>
-      <div class="skill-box">Backend: GoLang, Node.js, Python</div>
-      <div class="skill-box">Redux Toolkit & State Management</div>
-      <div class="skill-box">Firebase, Crashlytics, Analytics</div>
-      <div class="skill-box">IoT, NFC, Location Services</div>
-      <div class="skill-box">Team Leadership & Hiring</div>
-      <div class="skill-box">Architecture & System Design</div>
-    </div>
-  </section>
+    <section id="skills" class="container">
+        <h2>Technical Arsenal</h2>
 
-  <!-- EDUCATION -->
-  <section class="section">
-    <h2>Education</h2>
-    <p>
-      <strong>B.E. in Computer Science & Engineering</strong><br/>
-      Gujarat Technological University (GTU) · 2009 – 2013
-    </p>
-  </section>
+        <div class="skills-category">
+            <h3>Mobile & Frontend</h3>
+            <div class="skills-grid">
+                <div class="skill-tag">React Native (v0.70+)</div>
+                <div class="skill-tag">Android (Kotlin/Java)</div>
+                <div class="skill-tag">iOS (Swift/Obj-C)</div>
+                <div class="skill-tag">Flutter</div>
+                <div class="skill-tag">Redux Toolkit</div>
+            </div>
+        </div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Darshan Patel · Built with GitHub Pages
-  </footer>
+        <div class="skills-category">
+            <h3>Backend & DevOps</h3>
+            <div class="skills-grid">
+                <div class="skill-tag">GoLang</div>
+                <div class="skill-tag">Node.js</div>
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">Firebase</div>
+                <div class="skill-tag">CI/CD & CodePush</div>
+            </div>
+        </div>
+
+        <div class="skills-category">
+            <h3>Leadership</h3>
+            <div class="skills-grid">
+                <div class="skill-tag">Team Mentorship</div>
+                <div class="skill-tag">Hiring & Talent Dev</div>
+                <div class="skill-tag">System Design</div>
+                <div class="skill-tag">Agile Management</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Darshan Patel · Ahmedabad, India</p>
+            <p>Built with Passion & GitHub Pages</p>
+        </div>
+    </footer>
 
 </body>
+
 </html>
